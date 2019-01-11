@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License
 
-FROM quay.io/datawire/ambassador-envoy-alpine-stripped:v1.8.0-878705f86c
+FROM quay.io/datawire/ambassador-envoy:v1.7.0-66-g5f795fe2-alpine-stripped
 
 MAINTAINER Datawire <flynn@datawire.io>
 LABEL PROJECT_REPO_URL         = "git@github.com:datawire/ambassador.git" \
