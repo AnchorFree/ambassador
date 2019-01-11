@@ -42,3 +42,22 @@ spec:
   loadBalancerSourceRanges:
 {{ toYaml . | indent 4 }}
 {{- end }}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "ambassador.fullname" . }}-metrics
+  labels:
+    chart: {{ template "ambassador.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    name: {{ template "ambassador.fullname" . }}-metrics
+    service: metrics
+spec:
+  ports:
+  - name: metrics
+    port: 9102
+  selector:
+    app: {{ template "ambassador.name" . }}
+    release: {{ .Release.Name }}

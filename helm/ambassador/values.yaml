@@ -11,7 +11,7 @@ namespace:
 
 replicaCount: 1
 # If ambassador is needed as daemonSet then set create to true
-daemonSet: false
+daemonSet: true
 
 
 image:
@@ -29,7 +29,7 @@ service:
     https: 443
 
 
-  type: LoadBalancer
+  type: NodePort
   httpPort: 80
   httpsPort: 443
   #Nodeport to use  if type is selected as Nodeport otherwise it will be ignored
